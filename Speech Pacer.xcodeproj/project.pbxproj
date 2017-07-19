@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B9678C71F13F7A400A634E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9678C61F13F7A400A634E9 /* AppDelegate.swift */; };
+		3B9678CE1F13F7A400A634E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B9678CD1F13F7A400A634E9 /* Assets.xcassets */; };
+		3B9678D11F13F7A400A634E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9678CF1F13F7A400A634E9 /* LaunchScreen.storyboard */; };
+		3B9678DC1F14206200A634E9 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9678DB1F14206100A634E9 /* First.storyboard */; };
+		3B9678E01F14228F00A634E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9678DF1F14228F00A634E9 /* FirstViewController.swift */; };
+		3BDCBCA01F1554C300927957 /* SetNewTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCBC9F1F1554C300927957 /* SetNewTimerViewController.swift */; };
+		3BDCBCA21F15566100927957 /* ChooseTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCBCA11F15566100927957 /* ChooseTimerViewController.swift */; };
+		3BDCBCA41F1556AD00927957 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCBCA31F1556AD00927957 /* SettingsViewController.swift */; };
+		3BDCBCBE1F1585B000927957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDCBCBD1F1585B000927957 /* Main.storyboard */; };
+		3BDCBCC01F15882500927957 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCBCBF1F15882500927957 /* MainTabBarViewController.swift */; };
+		3BDCBCC41F158A7400927957 /* ChooseTimer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDCBCC31F158A7400927957 /* ChooseTimer.storyboard */; };
+		3BDCBCC61F158A8500927957 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDCBCC51F158A8500927957 /* Settings.storyboard */; };
+		3BDCBCC81F16CC6800927957 /* ListTimersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCBCC71F16CC6800927957 /* ListTimersTableViewCell.swift */; };
+		3BDCBCD81F1F237300927957 /* SetTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCBCD71F1F237300927957 /* SetTime.swift */; };
+		3BDCBCDA1F1F2B7300927957 /* RealTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCBCD91F1F2B7300927957 /* RealTimerViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B9678C31F13F7A400A634E9 /* Speech Pacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speech Pacer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B9678C61F13F7A400A634E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3B9678CD1F13F7A400A634E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B9678D01F13F7A400A634E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B9678D21F13F7A400A634E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B9678DB1F14206100A634E9 /* First.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
+		3B9678DF1F14228F00A634E9 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		3BDCBC9F1F1554C300927957 /* SetNewTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNewTimerViewController.swift; sourceTree = "<group>"; };
+		3BDCBCA11F15566100927957 /* ChooseTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTimerViewController.swift; sourceTree = "<group>"; };
+		3BDCBCA31F1556AD00927957 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3BDCBCBD1F1585B000927957 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3BDCBCBF1F15882500927957 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		3BDCBCC31F158A7400927957 /* ChooseTimer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChooseTimer.storyboard; sourceTree = "<group>"; };
+		3BDCBCC51F158A8500927957 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		3BDCBCC71F16CC6800927957 /* ListTimersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTimersTableViewCell.swift; sourceTree = "<group>"; };
+		3BDCBCD71F1F237300927957 /* SetTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetTime.swift; path = "../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Speech-Pacer 10.06.29 PM/Speech Pacer/SetTime.swift"; sourceTree = "<group>"; };
+		3BDCBCD91F1F2B7300927957 /* RealTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimerViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B9678C01F13F7A400A634E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B9678BA1F13F7A400A634E9 = {
+			isa = PBXGroup;
+			children = (
+				3B9678C51F13F7A400A634E9 /* Speech Pacer */,
+				3B9678C41F13F7A400A634E9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B9678C41F13F7A400A634E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B9678C31F13F7A400A634E9 /* Speech Pacer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B9678C51F13F7A400A634E9 /* Speech Pacer */ = {
+			isa = PBXGroup;
+			children = (
+				3BDCBCD71F1F237300927957 /* SetTime.swift */,
+				3B9678C61F13F7A400A634E9 /* AppDelegate.swift */,
+				3BDCBCC71F16CC6800927957 /* ListTimersTableViewCell.swift */,
+				3B9678DA1F14202200A634E9 /* Controllers */,
+				3B9678D91F141FFE00A634E9 /* Storyboards */,
+				3B9678D81F141FB400A634E9 /* Supporting Files */,
+				3B9678CD1F13F7A400A634E9 /* Assets.xcassets */,
+			);
+			path = "Speech Pacer";
+			sourceTree = "<group>";
+		};
+		3B9678D81F141FB400A634E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B9678D21F13F7A400A634E9 /* Info.plist */,
+				3B9678CF1F13F7A400A634E9 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B9678D91F141FFE00A634E9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3B9678DB1F14206100A634E9 /* First.storyboard */,
+				3BDCBCBD1F1585B000927957 /* Main.storyboard */,
+				3BDCBCC51F158A8500927957 /* Settings.storyboard */,
+				3BDCBCC31F158A7400927957 /* ChooseTimer.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		3B9678DA1F14202200A634E9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BDCBCD91F1F2B7300927957 /* RealTimerViewController.swift */,
+				3B9678DF1F14228F00A634E9 /* FirstViewController.swift */,
+				3BDCBC9F1F1554C300927957 /* SetNewTimerViewController.swift */,
+				3BDCBCA11F15566100927957 /* ChooseTimerViewController.swift */,
+				3BDCBCA31F1556AD00927957 /* SettingsViewController.swift */,
+				3BDCBCBF1F15882500927957 /* MainTabBarViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B9678C21F13F7A400A634E9 /* Speech Pacer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B9678D51F13F7A500A634E9 /* Build configuration list for PBXNativeTarget "Speech Pacer" */;
+			buildPhases = (
+				3B9678BF1F13F7A400A634E9 /* Sources */,
+				3B9678C01F13F7A400A634E9 /* Frameworks */,
+				3B9678C11F13F7A400A634E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Speech Pacer";
+			productName = "Speech Pacer";
+			productReference = 3B9678C31F13F7A400A634E9 /* Speech Pacer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B9678BB1F13F7A400A634E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "The Girl Code";
+				TargetAttributes = {
+					3B9678C21F13F7A400A634E9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 75HUG95U3C;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3B9678BE1F13F7A400A634E9 /* Build configuration list for PBXProject "Speech Pacer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B9678BA1F13F7A400A634E9;
+			productRefGroup = 3B9678C41F13F7A400A634E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B9678C21F13F7A400A634E9 /* Speech Pacer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B9678C11F13F7A400A634E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B9678D11F13F7A400A634E9 /* LaunchScreen.storyboard in Resources */,
+				3B9678CE1F13F7A400A634E9 /* Assets.xcassets in Resources */,
+				3BDCBCC41F158A7400927957 /* ChooseTimer.storyboard in Resources */,
+				3B9678DC1F14206200A634E9 /* First.storyboard in Resources */,
+				3BDCBCBE1F1585B000927957 /* Main.storyboard in Resources */,
+				3BDCBCC61F158A8500927957 /* Settings.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B9678BF1F13F7A400A634E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BDCBCA01F1554C300927957 /* SetNewTimerViewController.swift in Sources */,
+				3B9678E01F14228F00A634E9 /* FirstViewController.swift in Sources */,
+				3B9678C71F13F7A400A634E9 /* AppDelegate.swift in Sources */,
+				3BDCBCD81F1F237300927957 /* SetTime.swift in Sources */,
+				3BDCBCC81F16CC6800927957 /* ListTimersTableViewCell.swift in Sources */,
+				3BDCBCDA1F1F2B7300927957 /* RealTimerViewController.swift in Sources */,
+				3BDCBCC01F15882500927957 /* MainTabBarViewController.swift in Sources */,
+				3BDCBCA41F1556AD00927957 /* SettingsViewController.swift in Sources */,
+				3BDCBCA21F15566100927957 /* ChooseTimerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B9678CF1F13F7A400A634E9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B9678D01F13F7A400A634E9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B9678D31F13F7A500A634E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B9678D41F13F7A500A634E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B9678D61F13F7A500A634E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 75HUG95U3C;
+				INFOPLIST_FILE = "Speech Pacer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Aditi.Speech-Pacer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3B9678D71F13F7A500A634E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 75HUG95U3C;
+				INFOPLIST_FILE = "Speech Pacer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Aditi.Speech-Pacer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B9678BE1F13F7A400A634E9 /* Build configuration list for PBXProject "Speech Pacer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B9678D31F13F7A500A634E9 /* Debug */,
+				3B9678D41F13F7A500A634E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B9678D51F13F7A500A634E9 /* Build configuration list for PBXNativeTarget "Speech Pacer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B9678D61F13F7A500A634E9 /* Debug */,
+				3B9678D71F13F7A500A634E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B9678BB1F13F7A400A634E9 /* Project object */;
+}

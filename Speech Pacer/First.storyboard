@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rvc-Yo-CTe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FirstViewController-->
+        <scene sceneID="6yL-ST-Io6">
+            <objects>
+                <viewController title="FirstViewController" id="Rvc-Yo-CTe" customClass="FirstViewController" customModule="Speech_Pacer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e6r-x1-YYt"/>
+                        <viewControllerLayoutGuide type="bottom" id="QWM-Y3-FMu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u1o-zd-BRw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yR1-fX-n4Q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="wfv-gR-as1">
+                                        <rect key="frame" x="27" y="87" width="322" height="91"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speech Pacer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOg-s7-iFz">
+                                                <rect key="frame" x="42" y="0.0" width="238" height="48"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep your pace and deliver a perfect speech!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cI5-6y-UnA">
+                                                <rect key="frame" x="0.0" y="73" width="322" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.31723988650000001" green="0.57567034309999998" blue="0.78621093750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="265" id="JAA-qC-TlV"/>
+                                    <constraint firstItem="wfv-gR-as1" firstAttribute="centerX" secondItem="yR1-fX-n4Q" secondAttribute="centerX" id="LNl-18-COm"/>
+                                    <constraint firstItem="wfv-gR-as1" firstAttribute="centerY" secondItem="yR1-fX-n4Q" secondAttribute="centerY" id="hKr-6g-lDY"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="EcC-dP-vDd">
+                                <rect key="frame" x="180" y="329" width="57" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcd-p9-ZJ2">
+                                        <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
+                                        <state key="normal" title="Timers"/>
+                                        <connections>
+                                            <action selector="setTimerButtonTapped:" destination="Rvc-Yo-CTe" eventType="touchUpInside" id="qGf-a0-GZQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pc-O2-5om">
+                                        <rect key="frame" x="0.0" y="130" width="57" height="30"/>
+                                        <state key="normal" title="Settings"/>
+                                        <connections>
+                                            <action selector="settingsButtonTapped:" destination="Rvc-Yo-CTe" eventType="touchUpInside" id="giX-FJ-HpI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6B8-aZ-60d">
+                                <rect key="frame" x="25" y="287" width="100" height="238"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="clock-152067_960_720" highlightedImage="settings" translatesAutoresizingMaskIntoConstraints="NO" id="BgF-qO-dDL">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="108"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-Ke-NNe">
+                                        <rect key="frame" x="0.0" y="138" width="100" height="100"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yR1-fX-n4Q" firstAttribute="leading" secondItem="u1o-zd-BRw" secondAttribute="leading" id="2hi-SH-IAh"/>
+                            <constraint firstAttribute="trailing" secondItem="yR1-fX-n4Q" secondAttribute="trailing" id="otd-2S-kvp"/>
+                            <constraint firstItem="yR1-fX-n4Q" firstAttribute="top" secondItem="u1o-zd-BRw" secondAttribute="top" id="uJd-tb-Ssr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="settingsButton" destination="3pc-O2-5om" id="mP8-r9-fzx"/>
+                        <segue destination="I1l-8S-qgh" kind="show" identifier="toMain" id="psy-ne-gTg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJx-r4-uHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-577" y="-60"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="OdP-Am-u21">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="I1l-8S-qgh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85v-ff-PAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="-61"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clock-152067_960_720" width="100" height="108"/>
+        <image name="settings" width="100" height="100"/>
+    </resources>
+</document>

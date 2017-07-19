@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vmV-Vg-cpI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Timers-->
+        <scene sceneID="hOd-JH-brx">
+            <objects>
+                <tableViewController id="LEK-o9-J5X" customClass="ChooseTimerViewController" customModule="Speech_Pacer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="NCa-U4-aj6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listTimersTableViewCell" rowHeight="60" id="5Xu-v0-3cw" customClass="ListTimersTableViewCell" customModule="Speech_Pacer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Xu-v0-3cw" id="AFb-mo-1h7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtQ-YB-eOn">
+                                            <rect key="frame" x="32" y="8" width="107" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.31723988650000001" green="0.57567034309999998" blue="0.78621093750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpg-WE-dYe">
+                                            <rect key="frame" x="32" y="30" width="87" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="timerTimeLabel" destination="rpg-WE-dYe" id="hxO-lu-p27"/>
+                                    <outlet property="timerTitleLabel" destination="AtQ-YB-eOn" id="LUg-6v-ups"/>
+                                    <segue destination="qgi-qs-qSR" kind="show" identifier="displayRealTimer" id="3p2-xu-AGQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LEK-o9-J5X" id="BKR-30-hZm"/>
+                            <outlet property="delegate" destination="LEK-o9-J5X" id="htv-ec-7YC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Timers" id="Dbg-Oq-hUy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HxQ-5r-2a8">
+                            <connections>
+                                <segue destination="HfH-0e-TS0" kind="show" identifier="addTimer" id="VOL-1X-Orf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPG-2m-L1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="568.79999999999995" y="803.74812593703155"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qjw-fs-D5o">
+            <objects>
+                <viewController id="qgi-qs-qSR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ho0-Ke-5xB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bc5-M0-C8l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wZI-wF-qSJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="actual timer page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyv-EI-Z15">
+                                <rect key="frame" x="121" y="211" width="133" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aih-Ea-6NT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357.5999999999999" y="825.33733133433293"/>
+        </scene>
+        <!--Set a new timer-->
+        <scene sceneID="txv-v7-WqT">
+            <objects>
+                <viewController id="HfH-0e-TS0" customClass="SetNewTimerViewController" customModule="Speech_Pacer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2aH-ug-spQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="F5z-Tv-X2P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lih-mq-LY2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name of Speech/Timer Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-bc-T49">
+                                <rect key="frame" x="26" y="104" width="323" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Timer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TQ0-GU-dZ2">
+                                <rect key="frame" x="26" y="174" width="323" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TQ0-GU-dZ2" firstAttribute="top" secondItem="SD7-bc-T49" secondAttribute="bottom" constant="40" id="OIy-ma-pX3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SD7-bc-T49" secondAttribute="trailing" constant="10" id="RsZ-ra-jXr"/>
+                            <constraint firstItem="TQ0-GU-dZ2" firstAttribute="leading" secondItem="lih-mq-LY2" secondAttribute="leadingMargin" constant="10" id="ZIR-4d-t1n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TQ0-GU-dZ2" secondAttribute="trailing" constant="10" id="bN3-Er-8cj"/>
+                            <constraint firstItem="SD7-bc-T49" firstAttribute="leading" secondItem="lih-mq-LY2" secondAttribute="leadingMargin" constant="10" id="daw-bh-MMy"/>
+                            <constraint firstItem="SD7-bc-T49" firstAttribute="top" secondItem="2aH-ug-spQ" secondAttribute="bottom" constant="40" id="pTh-X3-mee"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Set a new timer" id="94a-P4-nWj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9eK-6u-5a8">
+                            <connections>
+                                <segue destination="Cf1-ny-DgG" kind="unwind" identifier="cancel" unwindAction="unwindToListNotesViewController:" id="tUw-mh-y9c"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8ti-ic-R65">
+                            <connections>
+                                <segue destination="Cf1-ny-DgG" kind="unwind" identifier="save" unwindAction="unwindToListNotesViewController:" id="jUb-yD-9Tu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="timerTextField" destination="TQ0-GU-dZ2" id="stQ-hV-psl"/>
+                        <outlet property="titleTextField" destination="SD7-bc-T49" id="LE2-Tv-rwQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVE-MW-rKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Cf1-ny-DgG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1358" y="147"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DXU-8e-Xs0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vmV-Vg-cpI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="choosetab" id="7e8-I1-D7r"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Ow-cz-7IV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LEK-o9-J5X" kind="relationship" relationship="rootViewController" id="3HN-Yh-LDs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTK-Gz-PbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-370.39999999999998" y="803.74812593703155"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="choosetab" width="40" height="40"/>
+    </resources>
+</document>

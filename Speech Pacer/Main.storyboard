@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qqr-e2-RQd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="YmU-v2-HUa">
+            <objects>
+                <tabBarController id="qqr-e2-RQd" customClass="MainTabBarController" customModule="Speech_Pacer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="xLk-mT-rnO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zOa-Ko-YgK" kind="relationship" relationship="viewControllers" id="LQd-oL-4hU"/>
+                        <segue destination="9MT-D2-UEF" kind="relationship" relationship="viewControllers" id="nB7-bb-wYi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcN-NX-36t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-559" y="58"/>
+        </scene>
+        <!--ChooseTimer-->
+        <scene sceneID="mqz-c6-REK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChooseTimer" id="zOa-Ko-YgK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="clocktab" selectedImage="clocktab" id="2kA-SK-2VC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzQ-xd-FJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-560" y="518"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="SKb-ke-hYD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="9MT-D2-UEF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="settingstab" id="XxX-QE-QzN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHY-3w-1jz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10" y="518"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clocktab" width="40" height="43"/>
+        <image name="settingstab" width="30" height="30"/>
+    </resources>
+</document>

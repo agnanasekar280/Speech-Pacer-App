@@ -31,6 +31,25 @@ class SetNewTimerViewController: UIViewController{
     }
 
     
+/*    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let listTimersTableViewController = segue.destination as! ChooseTimerViewController
+        if let identifier = segue.identifier {
+            if identifier == "cancel" {
+                print("Cancel button tapped")
+            } else if identifier == "save" {
+            if let timer = timer {
+                timer.title = titleTextField.text ?? ""
+                listTimersTableViewController.tableView.reloadData()
+            } else {
+                let newTimer = setTime()
+                newTimer.title = titleTextField.text ?? ""
+                newTimer.time = Date()
+                listTimersTableViewController.timers.append(newTimer)
+            }
+        }
+    }
+}
+  */
     @IBAction func save(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "backToMain", sender: nil)
     }

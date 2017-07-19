@@ -46,9 +46,15 @@ class ChooseTimerViewController: UITableViewController {
         let row = indexPath.row
         let timer = timers[row]
         cell.timerTitleLabel.text = timer.title
-   //   cell.timerTimeLabel.text = timer.time.convertToString()
+      //  cell.timerTimeLabel.text = timer.time.convertToString()
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            timers.remove(at: indexPath.row)
+        }
     }
     
     override func viewDidLoad() {

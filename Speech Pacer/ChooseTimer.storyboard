@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="568.79999999999995" y="803.74812593703155"/>
         </scene>
-        <!--View Controller-->
+        <!--Real Timer View Controller-->
         <scene sceneID="qjw-fs-D5o">
             <objects>
-                <viewController id="qgi-qs-qSR" sceneMemberID="viewController">
+                <viewController id="qgi-qs-qSR" customClass="RealTimerViewController" customModule="Speech_Pacer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ho0-Ke-5xB"/>
                         <viewControllerLayoutGuide type="bottom" id="Bc5-M0-C8l"/>
@@ -79,16 +79,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="actual timer page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyv-EI-Z15">
-                                <rect key="frame" x="121" y="211" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lq9-rr-mkm">
+                                <rect key="frame" x="0.0" y="147" width="375" height="45.5"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="115" translatesAutoresizingMaskIntoConstraints="NO" id="XP9-Gh-9s6">
+                                <rect key="frame" x="15" y="232.5" width="345" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb9-uF-b2V">
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetButton:" destination="qgi-qs-qSR" eventType="touchUpInside" id="PgU-yP-Ng6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-5t-Gk9">
+                                        <rect key="frame" x="154" y="0.0" width="34" height="30"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="startButton:" destination="qgi-qs-qSR" eventType="touchUpInside" id="fC9-yR-Kkp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5i-OD-BwH">
+                                        <rect key="frame" x="303" y="0.0" width="42" height="30"/>
+                                        <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="pauseButton:" destination="qgi-qs-qSR" eventType="touchUpInside" id="xCd-ba-UmO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XP9-Gh-9s6" firstAttribute="top" secondItem="lq9-rr-mkm" secondAttribute="bottom" constant="40" id="D6O-9R-HaL"/>
+                            <constraint firstAttribute="trailing" secondItem="lq9-rr-mkm" secondAttribute="trailing" id="GmR-GA-Cei"/>
+                            <constraint firstItem="lq9-rr-mkm" firstAttribute="top" secondItem="Ho0-Ke-5xB" secondAttribute="bottom" constant="83" id="LhL-dd-CYn"/>
+                            <constraint firstItem="lq9-rr-mkm" firstAttribute="leading" secondItem="wZI-wF-qSJ" secondAttribute="leading" id="Xkd-n5-sAN"/>
+                            <constraint firstItem="XP9-Gh-9s6" firstAttribute="leading" secondItem="wZI-wF-qSJ" secondAttribute="leading" constant="15" id="kYF-x5-B2s"/>
+                            <constraint firstAttribute="trailing" secondItem="XP9-Gh-9s6" secondAttribute="trailing" constant="15" id="xJW-q7-dFL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="S5i-OD-BwH" id="547-H8-tgB"/>
+                        <outlet property="startButton" destination="zQZ-5t-Gk9" id="Mtf-B3-zNk"/>
+                        <outlet property="timerLabel" destination="lq9-rr-mkm" id="0ig-7d-wJz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aih-Ea-6NT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

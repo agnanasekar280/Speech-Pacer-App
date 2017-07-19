@@ -1,28 +1,44 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7AC6A04DBDC923E91221C26B7C745A22E65CDAB2+++076EF05",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD" : 9223372036854775807
+    "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD+++064A35F" : 9223372036854775807,
+    "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD+++13B6698" : 9223372036854775807,
+    "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD+++7695584" : 9223372036854775807,
+    "7AC6A04DBDC923E91221C26B7C745A22E65CDAB2+++076EF05" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F6E4E4CD-555C-4066-B4F6-3CA35C173B5F",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD" : "Speech-Pacer%202\/"
+    "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD+++064A35F" : "..\/Library\/Mobile%20Documents\/com~apple~CloudDocs\/.Trash\/Speech-Pacer%2010.06.29%20PM",
+    "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD+++13B6698" : "Speech-Pacer%202\/",
+    "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD+++7695584" : "Speech-Pacer%202\/",
+    "7AC6A04DBDC923E91221C26B7C745A22E65CDAB2+++076EF05" : "Speech-Pacer-App\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Speech Pacer",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Speech Pacer.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/agnanasekar280\/Speech-Pacer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/agnanasekar280\/Speech-Pacer-App.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7AC6A04DBDC923E91221C26B7C745A22E65CDAB2+++076EF05"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/agnanasekar280\/Speech-Pacer.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD+++064A35F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/agnanasekar280\/Speech-Pacer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD+++13B6698"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/agnanasekar280\/Speech-Pacer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EBDED41E2FCA6FA05734786E03BADBB1EF718ACD+++7695584"
     }
   ]
 }

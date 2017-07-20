@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B81C80E1F1FDAFC0026B0AB /* SetTime 11-21-39-605.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B81C80D1F1FDAFC0026B0AB /* SetTime 11-21-39-605.swift */; };
+		3B81C8111F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B81C80F1F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodeld */; };
+		3B81C8131F1FF5630026B0AB /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B81C8121F1FF5630026B0AB /* CoreDataHelper.swift */; };
+		3B81C81B1F200B450026B0AB /* SetTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B81C81A1F200B450026B0AB /* SetTime.swift */; };
+		3B81C81D1F2010570026B0AB /* Date+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B81C81C1F2010570026B0AB /* Date+convertToString.swift */; };
 		3B9678C71F13F7A400A634E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9678C61F13F7A400A634E9 /* AppDelegate.swift */; };
 		3B9678CE1F13F7A400A634E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B9678CD1F13F7A400A634E9 /* Assets.xcassets */; };
 		3B9678D11F13F7A400A634E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9678CF1F13F7A400A634E9 /* LaunchScreen.storyboard */; };
@@ -25,7 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B81C80D1F1FDAFC0026B0AB /* SetTime 11-21-39-605.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SetTime 11-21-39-605.swift"; path = "../../../.Trash/SetTime 11-21-39-605.swift"; sourceTree = "<group>"; };
+		3B81C8101F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Speech-Pacer-App.xcdatamodel"; sourceTree = "<group>"; };
+		3B81C8121F1FF5630026B0AB /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		3B81C81A1F200B450026B0AB /* SetTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTime.swift; sourceTree = "<group>"; };
+		3B81C81C1F2010570026B0AB /* Date+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+convertToString.swift"; sourceTree = "<group>"; };
 		3B9678C31F13F7A400A634E9 /* Speech Pacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speech Pacer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9678C61F13F7A400A634E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B9678CD1F13F7A400A634E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,7 +80,10 @@
 		3B9678C51F13F7A400A634E9 /* Speech Pacer */ = {
 			isa = PBXGroup;
 			children = (
-				3B81C80D1F1FDAFC0026B0AB /* SetTime 11-21-39-605.swift */,
+				3B81C81C1F2010570026B0AB /* Date+convertToString.swift */,
+				3B81C81A1F200B450026B0AB /* SetTime.swift */,
+				3B81C80F1F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodeld */,
+				3B81C8121F1FF5630026B0AB /* CoreDataHelper.swift */,
 				3B9678C61F13F7A400A634E9 /* AppDelegate.swift */,
 				3BDCBCC71F16CC6800927957 /* ListTimersTableViewCell.swift */,
 				3B9678DA1F14202200A634E9 /* Controllers */,
@@ -196,13 +205,16 @@
 			files = (
 				3BDCBCA01F1554C300927957 /* SetNewTimerViewController.swift in Sources */,
 				3B9678E01F14228F00A634E9 /* FirstViewController.swift in Sources */,
+				3B81C81D1F2010570026B0AB /* Date+convertToString.swift in Sources */,
 				3B9678C71F13F7A400A634E9 /* AppDelegate.swift in Sources */,
 				3BDCBCC81F16CC6800927957 /* ListTimersTableViewCell.swift in Sources */,
 				3BDCBCDA1F1F2B7300927957 /* RealTimerViewController.swift in Sources */,
-				3B81C80E1F1FDAFC0026B0AB /* SetTime 11-21-39-605.swift in Sources */,
 				3BDCBCC01F15882500927957 /* MainTabBarViewController.swift in Sources */,
+				3B81C8111F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodeld in Sources */,
+				3B81C8131F1FF5630026B0AB /* CoreDataHelper.swift in Sources */,
 				3BDCBCA41F1556AD00927957 /* SettingsViewController.swift in Sources */,
 				3BDCBCA21F15566100927957 /* ChooseTimerViewController.swift in Sources */,
+				3B81C81B1F200B450026B0AB /* SetTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +375,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3B81C80F1F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B81C8101F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodel */,
+			);
+			currentVersion = 3B81C8101F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodel */;
+			path = "Speech-Pacer-App.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3B9678BB1F13F7A400A634E9 /* Project object */;
 }

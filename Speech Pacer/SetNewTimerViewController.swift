@@ -13,6 +13,8 @@ class SetNewTimerViewController: UIViewController{
     
     @IBOutlet weak var timerTextField: UITextField!
     
+    var minutes: Int = 0
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "cancel" {
@@ -22,34 +24,37 @@ class SetNewTimerViewController: UIViewController{
                 
                 let timer = setTime()
                 timer.title = titleTextField.text ?? ""
-                timer.time = Date()
+                timer.time = timerTextField.text ?? ""
+                
                 
                 let listTimersTableViewController = segue.destination as! ChooseTimerViewController
                 listTimersTableViewController.timers.append(timer)
+                listTimersTableViewController.minutes = minutes
+                print(minutes)
             }
         }
     }
-
     
-/*    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let listTimersTableViewController = segue.destination as! ChooseTimerViewController
-        if let identifier = segue.identifier {
-            if identifier == "cancel" {
-                print("Cancel button tapped")
-            } else if identifier == "save" {
-            if let timer = timer {
-                timer.title = titleTextField.text ?? ""
-                listTimersTableViewController.tableView.reloadData()
-            } else {
-                let newTimer = setTime()
-                newTimer.title = titleTextField.text ?? ""
-                newTimer.time = Date()
-                listTimersTableViewController.timers.append(newTimer)
+    
+    /*    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     let listTimersTableViewController = segue.destination as! ChooseTimerViewController
+     if let identifier = segue.identifier {
+     if identifier == "cancel" {
+     print("Cancel button tapped")
+     } else if identifier == "save" {
+     if let timer = timer {
+     timer.title = titleTextField.text ?? ""
+     listTimersTableViewController.tableView.reloadData()
+     } else {
+     let newTimer = setTime()
+     newTimer.title = titleTextField.text ?? ""
+     newTimer.time = Date()
+     listTimersTableViewController.timers.append(newTimer)
+                }
             }
         }
-    }
-}
-  */
+     }
+     */
     @IBAction func save(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "backToMain", sender: nil)
     }
@@ -67,11 +72,17 @@ class SetNewTimerViewController: UIViewController{
     
     
     func timerPickerValueChanged(sender: UIDatePicker){
-        
+        /*
         let timerFormatter = DateFormatter()
-        timerFormatter.timeStyle = DateFormatter.Style.medium
+        timerFormatter.timeStyle = DateFormatter.Style.short
         timerTextField.text = timerFormatter.string(from: sender.date)
-        
+ */     minutes = Int(sender.countDownDuration / 60)
+        if (sender.countDownDuration / 60) == 1 {
+            timerTextField.text = String(Int(sender.countDownDuration / 60)) + " minute"
+        }else{
+        timerTextField.text = String(Int(sender.countDownDuration / 60)) + " minutes"
+        }
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

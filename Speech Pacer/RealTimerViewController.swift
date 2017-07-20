@@ -13,7 +13,7 @@ class RealTimerViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     
-  //  var speechTime: Int = 0
+    var speechTime: Int = 0
     
     var seconds: Int = 0
     var timer = Timer()
@@ -32,7 +32,7 @@ class RealTimerViewController: UIViewController {
         pauseButton.isEnabled = true
         isTimerRunning = true
     }
-
+    
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
@@ -45,7 +45,7 @@ class RealTimerViewController: UIViewController {
     }
     
     @IBAction func pauseButton(_ sender: UIButton) {
-    if self.resumeTapped == false {
+        if self.resumeTapped == false {
             timer.invalidate()
             self.resumeTapped = true
             self.pauseButton.setTitle("Resume",for: .normal)
@@ -70,15 +70,36 @@ class RealTimerViewController: UIViewController {
         pauseButton.isEnabled = false
     }
     
+    func registerLocal() {
+        
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Yay!")
+            } else {
+                print("Uh oh")
+            }
+        }
+    }
+    
     func updateTimer() {
+        
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        
         if seconds < 1 {
             let content = UNMutableNotificationContent()
             content.title = "Time's Up!"
+            content.body = "You're done with your speech!"
+            content.categoryIdentifier = "time"
+            content.badge = 1
+            content.userInfo = ["customData": "fizzbuzz"]
+            content.sound = UNNotificationSound.default()
             
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
             let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
-            
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            center.add(request)
             
             timer.invalidate()
             //Send alert to indicate "time's up!"
@@ -87,42 +108,39 @@ class RealTimerViewController: UIViewController {
             timerLabel.text = timeString(time: TimeInterval(seconds))
         }
     }
-
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "displayRealTimer" {
                 print("Table view cell tapped")
-          }
+            }
         }
     }
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        seconds =  60
+        seconds =  60 * speechTime
         pauseButton.isEnabled = false
+        print(speechTime)
         timerLabel.text = timeString(time: TimeInterval(seconds))
-
         // Do any additional setup after loading the view.
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

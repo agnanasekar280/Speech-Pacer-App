@@ -6,10 +6,9 @@
 //  Copyright © 2017 The Girl Code. All rights reserved.
 //
 
-
 import Foundation
 
 class setTime {
     var title = ""
-    var time = ""
+    var time = Date()
 }

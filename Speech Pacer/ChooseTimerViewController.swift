@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ChooseTimerViewController: UITableViewController {
     
@@ -18,22 +19,14 @@ class ChooseTimerViewController: UITableViewController {
         }
     }
     
+    var minutes: Int = 0
+    
     @IBAction func unwindToListNotesViewController(_ segue: UIStoryboardSegue) {
         
         // for now, simply defining the method is sufficient.
         // we'll add code later
         
     }
-    
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let identifier = segue.identifier {
-                if identifier == "displayNote" {
-                    print("Table view cell tapped")
-                } else if identifier == "addNote" {
-                    print("+ button tapped")
-                }
-            }
-        }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timers.count
@@ -46,7 +39,7 @@ class ChooseTimerViewController: UITableViewController {
         let row = indexPath.row
         let timer = timers[row]
         cell.timerTitleLabel.text = timer.title
-      //  cell.timerTimeLabel.text = timer.time.convertToString()
+        cell.timerTimeLabel.text = timer.time
         
         return cell
     }
@@ -60,6 +53,9 @@ class ChooseTimerViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+        })
+        
         // Do any additional setup after loading the view.
     }
     
@@ -67,6 +63,20 @@ class ChooseTimerViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "displayRealTimer" {
+                let realTimerViewController = segue.destination as! RealTimerViewController
+                let indexPath = tableView.indexPathForSelectedRow!
+                let timer = timers[indexPath.row]
+                realTimerViewController.speechTime = minutes
+                print(minutes)
+            }
+            
+        }
+    }
+ 
     
     
     /*

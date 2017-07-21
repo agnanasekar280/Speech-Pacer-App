@@ -9,6 +9,8 @@ import UIKit
 
 class SetNewTimerViewController: UIViewController{
     
+    var timer: Timesaver?
+    
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var timerTextField: UITextField!
@@ -22,7 +24,7 @@ class SetNewTimerViewController: UIViewController{
             } else if identifier == "save" {
                 print("Save button tapped")
                 
-                let timer = setTime()
+                let timer = self.timer ?? CoreDataHelper.newTimer()
                 timer.title = titleTextField.text ?? ""
                 timer.time = timerTextField.text ?? ""
                 
@@ -31,6 +33,7 @@ class SetNewTimerViewController: UIViewController{
                 listTimersTableViewController.timers.append(timer)
                 listTimersTableViewController.minutes = minutes
                 print(minutes)
+                CoreDataHelper.saveTimer()
             }
         }
     }
@@ -72,11 +75,7 @@ class SetNewTimerViewController: UIViewController{
     
     
     func timerPickerValueChanged(sender: UIDatePicker){
-        /*
-        let timerFormatter = DateFormatter()
-        timerFormatter.timeStyle = DateFormatter.Style.short
-        timerTextField.text = timerFormatter.string(from: sender.date)
- */     minutes = Int(sender.countDownDuration / 60)
+        minutes = Int(sender.countDownDuration / 60)
         if (sender.countDownDuration / 60) == 1 {
             timerTextField.text = String(Int(sender.countDownDuration / 60)) + " minute"
         }else{

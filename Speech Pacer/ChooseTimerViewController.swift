@@ -11,9 +11,9 @@ import UserNotifications
 
 class ChooseTimerViewController: UITableViewController {
     
-    var timer: setTime?
+    var timer: Timesaver?
     
-    var timers = [setTime](){
+    var timers = [Timesaver](){
         didSet {
             tableView.reloadData()
         }
@@ -22,10 +22,7 @@ class ChooseTimerViewController: UITableViewController {
     var minutes: Int = 0
     
     @IBAction func unwindToListNotesViewController(_ segue: UIStoryboardSegue) {
-        
-        // for now, simply defining the method is sufficient.
-        // we'll add code later
-        
+        self.timers = CoreDataHelper.retrieveTimers()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,12 +43,15 @@ class ChooseTimerViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            timers.remove(at: indexPath.row)
+            CoreDataHelper.delete(timer: timers[indexPath.row])
+            timers = CoreDataHelper.retrieveTimers()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timers = CoreDataHelper.retrieveTimers()
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
         })

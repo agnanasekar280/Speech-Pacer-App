@@ -5,7 +5,7 @@
 //  Created by Aditi Gnanasekar on 7/19/17.
 //  Copyright © 2017 The Girl Code. All rights reserved.
 //
-/*
+
 import CoreData
 import UIKit
 
@@ -14,8 +14,8 @@ class CoreDataHelper {
     static let persistentContainer = appDelegate.persistentContainer
     static let managedContext = persistentContainer.viewContext
     
-    static func newTimer() -> Timer {
-        let timer = NSEntityDescription.insertNewObject(forEntityName: "Timer", into: managedContext) as! Timer
+    static func newTimer() -> Timesaver {
+        let timer = NSEntityDescription.insertNewObject(forEntityName: "Timesaver", into: managedContext) as! Timesaver
         return timer
     }
     
@@ -27,13 +27,13 @@ class CoreDataHelper {
         }
     }
     
-    static func delete(timer: Timer) {
+    static func delete(timer: Timesaver) {
         managedContext.delete(timer)
         saveTimer()
     }
     
-    static func retrieveTimers() -> [Timer] {
-        let fetchRequest = NSFetchRequest<Timer>(entityName: "Timer")
+    static func retrieveTimers() -> [Timesaver] {
+        let fetchRequest = NSFetchRequest<Timesaver>(entityName: "Timesaver")
         do {
             let results = try managedContext.fetch(fetchRequest)
             return results
@@ -44,4 +44,4 @@ class CoreDataHelper {
     }
     
 }
-*/
+

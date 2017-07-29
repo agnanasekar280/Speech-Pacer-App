@@ -12,6 +12,5 @@ class ListTimersTableViewCell: UITableViewCell {
 
     @IBOutlet weak var timerTitleLabel: UILabel!
     @IBOutlet weak var timerTimeLabel: UILabel!
-           
 
 }

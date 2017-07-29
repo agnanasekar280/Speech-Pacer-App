@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B1A8C591F27ADBF00E45C2B /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1A8C581F27ADBF00E45C2B /* PopUpViewController.swift */; };
 		3B81C8111F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B81C80F1F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodeld */; };
 		3B81C8131F1FF5630026B0AB /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B81C8121F1FF5630026B0AB /* CoreDataHelper.swift */; };
 		3B9678C71F13F7A400A634E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9678C61F13F7A400A634E9 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B1A8C581F27ADBF00E45C2B /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		3B81C8101F1FF2630026B0AB /* Speech-Pacer-App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Speech-Pacer-App.xcdatamodel"; sourceTree = "<group>"; };
 		3B81C8121F1FF5630026B0AB /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		3B9678C31F13F7A400A634E9 /* Speech Pacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speech Pacer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 		3B9678DA1F14202200A634E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3B1A8C581F27ADBF00E45C2B /* PopUpViewController.swift */,
 				3BDCBCD91F1F2B7300927957 /* RealTimerViewController.swift */,
 				3B9678DF1F14228F00A634E9 /* FirstViewController.swift */,
 				3BDCBC9F1F1554C300927957 /* SetNewTimerViewController.swift */,
@@ -200,6 +203,7 @@
 				3BDCBCA01F1554C300927957 /* SetNewTimerViewController.swift in Sources */,
 				3B9678E01F14228F00A634E9 /* FirstViewController.swift in Sources */,
 				3B9678C71F13F7A400A634E9 /* AppDelegate.swift in Sources */,
+				3B1A8C591F27ADBF00E45C2B /* PopUpViewController.swift in Sources */,
 				3BDCBCC81F16CC6800927957 /* ListTimersTableViewCell.swift in Sources */,
 				3BDCBCDA1F1F2B7300927957 /* RealTimerViewController.swift in Sources */,
 				3BDCBCC01F15882500927957 /* MainTabBarViewController.swift in Sources */,

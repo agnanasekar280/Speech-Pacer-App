@@ -15,6 +15,14 @@ class SetNewTimerViewController: UIViewController{
     
     @IBOutlet weak var timerTextField: UITextField!
     
+    @IBOutlet weak var notificationOneTextField: UITextField!
+    
+    @IBOutlet weak var notificationOneTimeTextField: UITextField!
+    
+    @IBOutlet weak var notificationTwoTextField: UITextField!
+    
+    @IBOutlet weak var notificationTwoTimeTextField: UITextField!
+    
     var minutes: Int = 0
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,6 +35,9 @@ class SetNewTimerViewController: UIViewController{
                 let timer = self.timer ?? CoreDataHelper.newTimer()
                 timer.title = titleTextField.text ?? ""
                 timer.time = timerTextField.text ?? ""
+                timer.notificationTitle = notificationOneTextField.text ?? ""
+                timer.notificationTime = notificationOneTimeTextField.text ?? ""
+                timer.minutes = Int16(minutes)
                 
                 
                 let listTimersTableViewController = segue.destination as! ChooseTimerViewController
@@ -71,6 +82,17 @@ class SetNewTimerViewController: UIViewController{
         
         timerTextField.inputView = timerPicker
         
+        let notificationOneTimerPicker = UIDatePicker()
+        notificationOneTimerPicker.datePickerMode = UIDatePickerMode.countDownTimer
+        notificationOneTimerPicker.addTarget(self, action: #selector(SetNewTimerViewController.notificationOneTimerPickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        
+        notificationOneTimeTextField.inputView = notificationOneTimerPicker
+        
+        let notificationTwoTimerPicker = UIDatePicker()
+        notificationTwoTimerPicker.datePickerMode = UIDatePickerMode.countDownTimer
+        notificationTwoTimerPicker.addTarget(self, action: #selector(SetNewTimerViewController.notificationTwoTimerPickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        
+        notificationTwoTimeTextField.inputView = notificationTwoTimerPicker
     }
     
     
@@ -82,6 +104,26 @@ class SetNewTimerViewController: UIViewController{
         timerTextField.text = String(Int(sender.countDownDuration / 60)) + " minutes"
         }
 
+    }
+    
+    func notificationOneTimerPickerValueChanged(sender: UIDatePicker){
+        minutes = Int(sender.countDownDuration / 60)
+        if (sender.countDownDuration / 60) == 1 {
+            notificationOneTimeTextField.text = String(Int(sender.countDownDuration / 60)) + " minute"
+        }else{
+            notificationOneTimeTextField.text = String(Int(sender.countDownDuration / 60)) + " minutes"
+        }
+        
+    }
+    
+    func notificationTwoTimerPickerValueChanged(sender: UIDatePicker){
+        minutes = Int(sender.countDownDuration / 60)
+        if (sender.countDownDuration / 60) == 1 {
+            notificationTwoTimeTextField.text = String(Int(sender.countDownDuration / 60)) + " minute"
+        }else{
+            notificationTwoTimeTextField.text = String(Int(sender.countDownDuration / 60)) + " minutes"
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

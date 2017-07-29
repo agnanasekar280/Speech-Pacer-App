@@ -12,8 +12,24 @@ import UserNotifications
 class RealTimerViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet var notificationView: UIView!
+
+    
+    @IBAction func dismissPopUp(_ sender: UIButton) {
+    }
+    
+    
+//    @IBAction func showPopUpButton(_ sender: UIButton) {
+//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! PopUpViewController
+//        self.addChildViewController(popOverVC)
+//        popOverVC.view.frame
+//        self.view.addSubview(popOverVC)
+//        popOverVC.didMove(toParentViewController: self)
+//        
+//    }
     
     var speechTime: Int = 0
+    var notificationOneTime: Int = 0
     
     var seconds: Int = 0
     var timer = Timer()
@@ -61,7 +77,7 @@ class RealTimerViewController: UIViewController {
     
     @IBAction func resetButton(_ sender: UIButton) {
         timer.invalidate()
-        seconds = 60
+        seconds = 60 * speechTime
         timerLabel.text = timeString(time: TimeInterval(seconds))
         isTimerRunning = false
         pauseButton.setTitle("Pause", for: .normal)
@@ -87,6 +103,14 @@ class RealTimerViewController: UIViewController {
         
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
+        
+        if seconds == 60 {
+            animateIn()
+        }
+        
+        if notificationView.alpha == 1 {
+            animateOut()
+        }
         
         if seconds < 1 {
             let content = UNMutableNotificationContent()
@@ -124,7 +148,30 @@ class RealTimerViewController: UIViewController {
         pauseButton.isEnabled = false
         print(speechTime)
         timerLabel.text = timeString(time: TimeInterval(seconds))
-        // Do any additional setup after loading the view.
+        notificationView.layer.cornerRadius = 5
+    }
+    
+    func animateIn() {
+        self.view.addSubview(notificationView)
+        notificationView.center = self.view.center
+        
+        notificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        notificationView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+                  self.notificationView.alpha = 1
+                  self.notificationView.transform = CGAffineTransform.identity
+    }
+
+}
+    
+    func animateOut() {
+        UIView.animate(withDuration: 0.3, delay: 3, options: [], animations: {
+            self.notificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.notificationView.alpha = 0
+        }) { (success: Bool) in
+            self.notificationView.removeFromSuperview()
+        }
     }
     
     

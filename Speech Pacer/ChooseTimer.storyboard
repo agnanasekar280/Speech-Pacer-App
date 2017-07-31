@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtQ-YB-eOn">
-                                            <rect key="frame" x="32" y="8" width="155" height="21"/>
+                                            <rect key="frame" x="32" y="8" width="335" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.31723988650000001" green="0.57567034309999998" blue="0.78621093750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -54,7 +54,9 @@
                             <outlet property="delegate" destination="LEK-o9-J5X" id="htv-ec-7YC"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="clocktab" id="C7T-lp-jtg"/>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="clocktab" id="C7T-lp-jtg">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="My Timers" id="Dbg-Oq-hUy">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HxQ-5r-2a8">
                             <connections>
@@ -80,31 +82,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lq9-rr-mkm">
-                                <rect key="frame" x="0.0" y="147" width="375" height="45.5"/>
-                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="XP9-Gh-9s6">
-                                <rect key="frame" x="15" y="232.5" width="345" height="30"/>
+                                <rect key="frame" x="15" y="354" width="345" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb9-uF-b2V">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetButton:" destination="qgi-qs-qSR" eventType="touchUpInside" id="PgU-yP-Ng6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-5t-Gk9">
-                                        <rect key="frame" x="169" y="0.0" width="34" height="30"/>
+                                        <rect key="frame" x="165" y="0.0" width="36" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="startButton:" destination="qgi-qs-qSR" eventType="touchUpInside" id="fC9-yR-Kkp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5i-OD-BwH">
-                                        <rect key="frame" x="303" y="0.0" width="42" height="30"/>
+                                        <rect key="frame" x="301" y="0.0" width="44" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Pause"/>
                                         <connections>
                                             <action selector="pauseButton:" destination="qgi-qs-qSR" eventType="touchUpInside" id="xCd-ba-UmO"/>
@@ -112,25 +111,37 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Speech" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uer-Za-Anb">
-                                <rect key="frame" x="10" y="93" width="355" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Speech" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uer-Za-Anb">
+                                <rect key="frame" x="20" y="104" width="335" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="XwC-hV-J63"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" red="0.31764705882352939" green="0.57647058823529407" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lq9-rr-mkm">
+                                <rect key="frame" x="0.0" y="207" width="375" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="l9i-HB-Dba"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="65"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XP9-Gh-9s6" firstAttribute="top" secondItem="lq9-rr-mkm" secondAttribute="bottom" constant="40" id="D6O-9R-HaL"/>
+                            <constraint firstItem="lq9-rr-mkm" firstAttribute="top" secondItem="Uer-Za-Anb" secondAttribute="bottom" constant="36" id="3aa-UA-Iwj"/>
                             <constraint firstAttribute="trailing" secondItem="lq9-rr-mkm" secondAttribute="trailing" id="GmR-GA-Cei"/>
-                            <constraint firstItem="Uer-Za-Anb" firstAttribute="leading" secondItem="wZI-wF-qSJ" secondAttribute="leading" constant="10" id="Kgu-Ma-c3W"/>
-                            <constraint firstItem="lq9-rr-mkm" firstAttribute="top" secondItem="Ho0-Ke-5xB" secondAttribute="bottom" constant="83" id="LhL-dd-CYn"/>
-                            <constraint firstItem="Uer-Za-Anb" firstAttribute="top" secondItem="Ho0-Ke-5xB" secondAttribute="bottom" constant="29" id="Lxc-LW-2j8"/>
-                            <constraint firstItem="lq9-rr-mkm" firstAttribute="top" secondItem="Uer-Za-Anb" secondAttribute="bottom" constant="25" id="UvN-U5-mSg"/>
-                            <constraint firstAttribute="trailing" secondItem="Uer-Za-Anb" secondAttribute="trailing" constant="10" id="VJf-Ne-YXn"/>
                             <constraint firstItem="lq9-rr-mkm" firstAttribute="leading" secondItem="wZI-wF-qSJ" secondAttribute="leading" id="Xkd-n5-sAN"/>
+                            <constraint firstItem="Bc5-M0-C8l" firstAttribute="top" secondItem="XP9-Gh-9s6" secondAttribute="bottom" constant="234" id="aR2-Sx-dOF"/>
                             <constraint firstItem="XP9-Gh-9s6" firstAttribute="leading" secondItem="wZI-wF-qSJ" secondAttribute="leading" constant="15" id="kYF-x5-B2s"/>
+                            <constraint firstItem="Uer-Za-Anb" firstAttribute="leading" secondItem="wZI-wF-qSJ" secondAttribute="leading" constant="20" id="kzN-kR-LMt"/>
+                            <constraint firstAttribute="trailing" secondItem="Uer-Za-Anb" secondAttribute="trailing" constant="20" id="t6E-BY-Kd6"/>
                             <constraint firstAttribute="trailing" secondItem="XP9-Gh-9s6" secondAttribute="trailing" constant="15" id="xJW-q7-dFL"/>
+                            <constraint firstItem="Uer-Za-Anb" firstAttribute="top" secondItem="Ho0-Ke-5xB" secondAttribute="bottom" constant="40" id="xLP-8m-ocf"/>
+                            <constraint firstItem="XP9-Gh-9s6" firstAttribute="top" secondItem="lq9-rr-mkm" secondAttribute="bottom" constant="23" id="zKU-OL-gkl"/>
                         </constraints>
                     </view>
                     <connections>
@@ -150,10 +161,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEz-QT-Sqz">
-                            <rect key="frame" x="0.0" y="20" width="340" height="28"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="340" id="jjK-Ri-c5h"/>
-                            </constraints>
+                            <rect key="frame" x="109" y="97" width="122.5" height="28"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -161,8 +169,8 @@
                     </subviews>
                     <color key="backgroundColor" red="0.81998437639999999" green="0.56426274779999996" blue="0.65246862169999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="HEz-QT-Sqz" firstAttribute="top" secondItem="Jcc-8l-mUE" secondAttribute="top" constant="20" id="Sth-fO-8bR"/>
-                        <constraint firstItem="HEz-QT-Sqz" firstAttribute="centerX" secondItem="Jcc-8l-mUE" secondAttribute="centerX" id="eXI-V3-740"/>
+                        <constraint firstItem="HEz-QT-Sqz" firstAttribute="centerX" secondItem="Jcc-8l-mUE" secondAttribute="centerX" id="0Jx-2j-U4x"/>
+                        <constraint firstItem="HEz-QT-Sqz" firstAttribute="centerY" secondItem="Jcc-8l-mUE" secondAttribute="centerY" id="UUh-99-XcD"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" id="Eef-kG-TFk" userLabel="secondNotificationView">
@@ -170,10 +178,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oZ-lM-QVu">
-                            <rect key="frame" x="0.0" y="20" width="340" height="28"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="340" id="Fsw-he-h5I"/>
-                            </constraints>
+                            <rect key="frame" x="10" y="20" width="320" height="28"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -181,12 +186,13 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.52647933059999996" blue="0.28143278620000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="4oZ-lM-QVu" firstAttribute="top" secondItem="Eef-kG-TFk" secondAttribute="top" constant="20" id="UNY-ip-2mz"/>
-                        <constraint firstItem="4oZ-lM-QVu" firstAttribute="centerX" secondItem="Eef-kG-TFk" secondAttribute="centerX" id="mbW-L7-NRM"/>
+                        <constraint firstItem="4oZ-lM-QVu" firstAttribute="top" secondItem="Eef-kG-TFk" secondAttribute="top" constant="20" id="7sZ-TE-AGO"/>
+                        <constraint firstAttribute="trailing" secondItem="4oZ-lM-QVu" secondAttribute="trailing" constant="10" id="XGf-wv-gbz"/>
+                        <constraint firstItem="4oZ-lM-QVu" firstAttribute="leading" secondItem="Eef-kG-TFk" secondAttribute="leading" constant="10" id="rYs-W0-DMh"/>
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1357.5999999999999" y="825.33733133433293"/>
+            <point key="canvasLocation" x="1431" y="762"/>
         </scene>
         <!--Set a new timer-->
         <scene sceneID="txv-v7-WqT">

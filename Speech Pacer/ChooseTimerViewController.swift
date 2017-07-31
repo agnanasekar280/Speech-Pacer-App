@@ -80,7 +80,7 @@ class ChooseTimerViewController: UITableViewController {
                 realTimerViewController.notificationTwoTime = Int(timer.notificationTwoMinutes)
                 realTimerViewController.notificationLabel.text = timer.notificationTitle
                 realTimerViewController.secondNotificationLabel.text = timer.notificationTwoTitle
-                
+                realTimerViewController.secondNotification = timer.title!
             }
             
         }

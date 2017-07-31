@@ -18,6 +18,8 @@ class RealTimerViewController: UIViewController {
     @IBOutlet var secondNotificationView: UIView!
     @IBOutlet weak var secondNotificationLabel: UILabel!
     
+    var secondNotification = ""
+    
     
     //    @IBAction func showPopUpButton(_ sender: UIButton) {
     //        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! PopUpViewController
@@ -158,6 +160,7 @@ class RealTimerViewController: UIViewController {
         print(speechTime)
         timerLabel.text = timeString(time: TimeInterval(seconds))
         notificationView.layer.cornerRadius = 5
+        speechTitleLabel.text = secondNotification
     }
     
     func animateIn() {
@@ -189,7 +192,7 @@ class RealTimerViewController: UIViewController {
     }
     
     func animateOutAgain() {
-        UIView.animate(withDuration: 0.3, delay: 3, options: [], animations: {
+        UIView.animate(withDuration: 0.3, delay: 4, options: [], animations: {
             self.secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.secondNotificationView.alpha = 0
         }) { (success: Bool) in
@@ -200,7 +203,7 @@ class RealTimerViewController: UIViewController {
 
     
     func animateOut() {
-        UIView.animate(withDuration: 0.3, delay: 3, options: [], animations: {
+        UIView.animate(withDuration: 0.3, delay: 4, options: [], animations: {
             self.notificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.notificationView.alpha = 0
         }) { (success: Bool) in

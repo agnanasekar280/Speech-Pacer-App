@@ -31,7 +31,9 @@
         <scene sceneID="mqz-c6-REK">
             <objects>
                 <viewControllerPlaceholder storyboardName="ChooseTimer" id="zOa-Ko-YgK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="clocktab" selectedImage="clocktab" id="2kA-SK-2VC"/>
+                    <tabBarItem key="tabBarItem" title="" image="clocktab" selectedImage="clocktab" id="2kA-SK-2VC">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzQ-xd-FJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,7 +43,9 @@
         <scene sceneID="SKb-ke-hYD">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="9MT-D2-UEF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="settingstab" selectedImage="settings" id="XxX-QE-QzN"/>
+                    <tabBarItem key="tabBarItem" title="" image="settingstab" selectedImage="settings" id="XxX-QE-QzN">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHY-3w-1jz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

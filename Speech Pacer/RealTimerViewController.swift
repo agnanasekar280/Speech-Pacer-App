@@ -11,25 +11,26 @@ import UserNotifications
 
 class RealTimerViewController: UIViewController {
     
+    @IBOutlet weak var speechTitleLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var notificationView: UIView!
-
+    @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet var secondNotificationView: UIView!
+    @IBOutlet weak var secondNotificationLabel: UILabel!
     
-    @IBAction func dismissPopUp(_ sender: UIButton) {
-    }
     
-    
-//    @IBAction func showPopUpButton(_ sender: UIButton) {
-//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! PopUpViewController
-//        self.addChildViewController(popOverVC)
-//        popOverVC.view.frame
-//        self.view.addSubview(popOverVC)
-//        popOverVC.didMove(toParentViewController: self)
-//        
-//    }
+    //    @IBAction func showPopUpButton(_ sender: UIButton) {
+    //        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! PopUpViewController
+    //        self.addChildViewController(popOverVC)
+    //        popOverVC.view.frame
+    //        self.view.addSubview(popOverVC)
+    //        popOverVC.didMove(toParentViewController: self)
+    //
+    //    }
     
     var speechTime: Int = 0
     var notificationOneTime: Int = 0
+    var notificationTwoTime: Int = 0
     
     var seconds: Int = 0
     var timer = Timer()
@@ -104,12 +105,20 @@ class RealTimerViewController: UIViewController {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         
-        if seconds == 60 {
+        if seconds == 60 * notificationOneTime {
             animateIn()
         }
         
+        if seconds == 60 * notificationTwoTime {
+            animateInAgain()
+        }
+                
         if notificationView.alpha == 1 {
             animateOut()
+        }
+        
+        if secondNotificationView.alpha == 1{
+            animateOutAgain()
         }
         
         if seconds < 1 {
@@ -159,11 +168,36 @@ class RealTimerViewController: UIViewController {
         notificationView.alpha = 0
         
         UIView.animate(withDuration: 0.4) {
-                  self.notificationView.alpha = 1
-                  self.notificationView.transform = CGAffineTransform.identity
+            self.notificationView.alpha = 1
+            self.notificationView.transform = CGAffineTransform.identity
+        }
+        
+    }
+    
+    func animateInAgain() {
+        self.view.addSubview(secondNotificationView)
+        secondNotificationView.center = self.view.center
+        
+        secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        secondNotificationView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.secondNotificationView.alpha = 1
+            self.secondNotificationView.transform = CGAffineTransform.identity
+        }
+        
+    }
+    
+    func animateOutAgain() {
+        UIView.animate(withDuration: 0.3, delay: 3, options: [], animations: {
+            self.secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.secondNotificationView.alpha = 0
+        }) { (success: Bool) in
+            self.secondNotificationView.removeFromSuperview()
+        }
     }
 
-}
+
     
     func animateOut() {
         UIView.animate(withDuration: 0.3, delay: 3, options: [], animations: {

@@ -21,6 +21,7 @@ class ChooseTimerViewController: UITableViewController {
     
     var minutes: Int = 0
     var notificationOneMinutes: Int = 0
+    var notificationTwoMinutes: Int = 0
     
     @IBAction func unwindToListNotesViewController(_ segue: UIStoryboardSegue) {
         self.timers = CoreDataHelper.retrieveTimers()
@@ -72,12 +73,19 @@ class ChooseTimerViewController: UITableViewController {
                 let realTimerViewController = segue.destination as! RealTimerViewController
                 let indexPath = tableView.indexPathForSelectedRow!
                 let timer = timers[indexPath.row]
-                realTimerViewController.speechTime = minutes
+                
+                realTimerViewController.speechTime = Int(timer.minutes)
+                print(timer.minutes)
+                realTimerViewController.notificationOneTime = Int(timer.notificationOneMinutes)
+                realTimerViewController.notificationTwoTime = Int(timer.notificationTwoMinutes)
+                realTimerViewController.notificationLabel.text = timer.notificationTitle
+                realTimerViewController.secondNotificationLabel.text = timer.notificationTwoTitle
+                
             }
             
         }
     }
- 
+    
     
     
     /*

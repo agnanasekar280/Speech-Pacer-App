@@ -56,8 +56,9 @@ class ChooseTimerViewController: UITableViewController {
         
         timers = CoreDataHelper.retrieveTimers()
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
-        })
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.black,
+             NSFontAttributeName: UIFont(name: "Avenir", size: 21)!]
         
         // Do any additional setup after loading the view.
     }

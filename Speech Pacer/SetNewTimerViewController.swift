@@ -21,7 +21,57 @@ class SetNewTimerViewController: UIViewController {
     @IBOutlet weak var notificationTwoTextField: UITextField!
     
     @IBOutlet weak var notificationTwoTimeTextField: UITextField!
+    
+    @IBAction func timerTextFieldTapped(_ sender: UITextField) {
+        let timerPicker = UIDatePicker()
+        var dateComp: NSDateComponents = NSDateComponents()
+        dateComp.hour = 0
+        dateComp.minute = 1
+        dateComp.timeZone = NSTimeZone.system
+        var calendar: NSCalendar = NSCalendar(calendarIdentifier: .gregorian)!
+        var date = calendar.date(from: dateComp as DateComponents)!
+        timerPicker.datePickerMode = UIDatePickerMode.countDownTimer
+        
+        sender.inputView = timerPicker
+        timerPicker.setDate(date as Date, animated: true)
 
+        timerPicker.addTarget(self, action: #selector(timerPickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+    }
+
+    @IBAction func notificationOneTimerTextField(_ sender: UITextField) {
+        let notificationOneTimerPicker = UIDatePicker()
+        var dateComps: NSDateComponents = NSDateComponents()
+        dateComps.hour = 0
+        dateComps.minute = 1
+        dateComps.timeZone = NSTimeZone.system
+        var calendar: NSCalendar = NSCalendar(calendarIdentifier: .gregorian)!
+        var date = calendar.date(from: dateComps as DateComponents)!
+        notificationOneTimerPicker.datePickerMode = UIDatePickerMode.countDownTimer
+        
+        notificationOneTimeTextField.inputView = notificationOneTimerPicker
+        notificationOneTimerPicker.setDate(date as Date, animated: true)
+        
+        notificationOneTimerPicker.addTarget(self, action: #selector(notificationOneTimerPickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+    }
+    
+    
+    @IBAction func notificationTwoTimerPicker(_ sender: UITextField) {
+        let notificationTwoTimerPicker = UIDatePicker()
+        var dateComponent: NSDateComponents = NSDateComponents()
+        dateComponent.hour = 0
+        dateComponent.minute = 1
+        dateComponent.timeZone = NSTimeZone.system
+        var calendar: NSCalendar = NSCalendar(calendarIdentifier: .gregorian)!
+        var date = calendar.date(from: dateComponent as DateComponents)!
+        notificationTwoTimerPicker.datePickerMode = UIDatePickerMode.countDownTimer
+        
+        notificationTwoTimeTextField.inputView = notificationTwoTimerPicker
+        notificationTwoTimerPicker.setDate(date as Date, animated: true)
+        
+        notificationTwoTimerPicker.addTarget(self, action: #selector(notificationTwoTimerPickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+    }
+    
+    
     var minutes: Int = 0
     var notificationOneMinutes: Int = 0
     var notificationTwoMinutes: Int = 0
@@ -54,59 +104,19 @@ class SetNewTimerViewController: UIViewController {
         }
     }
     
-    
-    /*    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     let listTimersTableViewController = segue.destination as! ChooseTimerViewController
-     if let identifier = segue.identifier {
-     if identifier == "cancel" {
-     print("Cancel button tapped")
-     } else if identifier == "save" {
-     if let timer = timer {
-     timer.title = titleTextField.text ?? ""
-     listTimersTableViewController.tableView.reloadData()
-     } else {
-     let newTimer = setTime()
-     newTimer.title = titleTextField.text ?? ""
-     newTimer.time = Date()
-     listTimersTableViewController.timers.append(newTimer)
-     }
-     }
-     }
-     }
-     */
     @IBAction func save(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "backToMain", sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let timerPicker = UIDatePicker()
-        timerPicker.datePickerMode = UIDatePickerMode.countDownTimer
-        timerTextField.inputView = timerPicker
-        timerPicker.addTarget(self, action: #selector(SetNewTimerViewController.timerPickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
-        
-        
-        
-        let notificationOneTimerPicker = UIDatePicker()
-        notificationOneTimerPicker.datePickerMode = UIDatePickerMode.countDownTimer
-        notificationOneTimeTextField.inputView = notificationOneTimerPicker
-        notificationOneTimerPicker.addTarget(self, action: #selector(SetNewTimerViewController.notificationOneTimerPickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
-        
-
-        
-        let notificationTwoTimerPicker = UIDatePicker()
-        notificationTwoTimerPicker.datePickerMode = UIDatePickerMode.countDownTimer
-        notificationTwoTimerPicker.addTarget(self, action: #selector(SetNewTimerViewController.notificationTwoTimerPickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
-        
-        notificationTwoTimeTextField.inputView = notificationTwoTimerPicker
     }
 
     
     func timerPickerValueChanged(sender: UIDatePicker){
         minutes = Int(sender.countDownDuration / 60)
         if (sender.countDownDuration / 60) == 1 {
-            timerTextField.text = String(Int(sender.countDownDuration / 60)) + " minute"
+        timerTextField.text = String(Int(sender.countDownDuration / 60)) + " minute"
 
         }else{
             timerTextField.text = String(Int(sender.countDownDuration / 60)) + " minutes"

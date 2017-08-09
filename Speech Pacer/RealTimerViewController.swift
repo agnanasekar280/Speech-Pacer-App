@@ -7,7 +7,10 @@
 //
 
 import UIKit
-import UserNotifications
+import AudioToolbox
+
+
+let notificationKey = "com.color"
 
 class RealTimerViewController: UIViewController {
     
@@ -17,19 +20,9 @@ class RealTimerViewController: UIViewController {
     @IBOutlet weak var notificationLabel: UILabel!
     @IBOutlet var secondNotificationView: UIView!
     @IBOutlet weak var secondNotificationLabel: UILabel!
+    @IBOutlet var finalNotificationView: UIView!
     
     var secondNotification = ""
-    
-    
-    //    @IBAction func showPopUpButton(_ sender: UIButton) {
-    //        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! PopUpViewController
-    //        self.addChildViewController(popOverVC)
-    //        popOverVC.view.frame
-    //        self.view.addSubview(popOverVC)
-    //        popOverVC.didMove(toParentViewController: self)
-    //
-    //    }
-    
     var speechTime: Int = 0
     var notificationOneTime: Int = 0
     var notificationTwoTime: Int = 0
@@ -38,6 +31,15 @@ class RealTimerViewController: UIViewController {
     var timer = Timer()
     var isTimerRunning = false
     var resumeTapped = false
+    
+    func changeColor(_ notification: NSNotification) {
+        if let color = notification.userInfo?["color"] as? UIColor {
+            notificationView.backgroundColor = color
+            secondNotificationView.backgroundColor = color
+        } else {
+            notificationView.backgroundColor = UIColor.darkGray
+        }
+    }
     
     func timeString(time:TimeInterval) -> String {
         let hours = Int(time) / 3600
@@ -89,23 +91,7 @@ class RealTimerViewController: UIViewController {
         pauseButton.isEnabled = false
     }
     
-    func registerLocal() {
-        
-        let center = UNUserNotificationCenter.current()
-        
-        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-            if granted {
-                print("Yay!")
-            } else {
-                print("Uh oh")
-            }
-        }
-    }
-    
     func updateTimer() {
-        
-        let center = UNUserNotificationCenter.current()
-        center.removeAllPendingNotificationRequests()
         
         if seconds == 60 * notificationOneTime {
             animateIn()
@@ -113,6 +99,10 @@ class RealTimerViewController: UIViewController {
         
         if seconds == 60 * notificationTwoTime {
             animateInAgain()
+        }
+        
+        if seconds == 0 {
+            animateInFinal()
         }
                 
         if notificationView.alpha == 1 {
@@ -124,18 +114,6 @@ class RealTimerViewController: UIViewController {
         }
         
         if seconds < 1 {
-            let content = UNMutableNotificationContent()
-            content.title = "Time's Up!"
-            content.body = "You're done with your speech!"
-            content.categoryIdentifier = "time"
-            content.badge = 1
-            content.userInfo = ["customData": "fizzbuzz"]
-            content.sound = UNNotificationSound.default()
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-            let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
-            center.add(request)
-            
             timer.invalidate()
             //Send alert to indicate "time's up!"
         } else {
@@ -161,14 +139,19 @@ class RealTimerViewController: UIViewController {
         timerLabel.text = timeString(time: TimeInterval(seconds))
         notificationView.layer.cornerRadius = 5
         speechTitleLabel.text = secondNotification
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changeColor(_:)), name: NSNotification.Name(notificationKey), object: nil)
+        
     }
     
     func animateIn() {
         self.view.addSubview(notificationView)
         notificationView.center = self.view.center
         
-        notificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+       // notificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         notificationView.alpha = 0
+        
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
         UIView.animate(withDuration: 0.4) {
             self.notificationView.alpha = 1
@@ -181,8 +164,10 @@ class RealTimerViewController: UIViewController {
         self.view.addSubview(secondNotificationView)
         secondNotificationView.center = self.view.center
         
-        secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        //secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         secondNotificationView.alpha = 0
+        
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
         UIView.animate(withDuration: 0.4) {
             self.secondNotificationView.alpha = 1
@@ -191,9 +176,25 @@ class RealTimerViewController: UIViewController {
         
     }
     
+    func animateInFinal() {
+        self.view.addSubview(finalNotificationView)
+        finalNotificationView.center = self.view.center
+        
+        //secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        finalNotificationView.alpha = 0
+        
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate)) 
+        
+        UIView.animate(withDuration: 0.4) {
+            self.finalNotificationView.alpha = 1
+            self.finalNotificationView.transform = CGAffineTransform.identity
+        }
+        
+    }
+    
     func animateOutAgain() {
         UIView.animate(withDuration: 0.3, delay: 4, options: [], animations: {
-            self.secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            //self.secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.secondNotificationView.alpha = 0
         }) { (success: Bool) in
             self.secondNotificationView.removeFromSuperview()
@@ -204,7 +205,7 @@ class RealTimerViewController: UIViewController {
     
     func animateOut() {
         UIView.animate(withDuration: 0.3, delay: 4, options: [], animations: {
-            self.notificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+         //   self.notificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.notificationView.alpha = 0
         }) { (success: Bool) in
             self.notificationView.removeFromSuperview()

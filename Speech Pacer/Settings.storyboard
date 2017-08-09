@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,28 +22,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIe-6T-Q1J">
-                                <rect key="frame" x="166" y="223" width="62" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmG-EG-GFc">
+                                <rect key="frame" x="66" y="117" width="243" height="128"/>
+                                <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="ais-F1-ode"/>
+                                    <constraint firstAttribute="height" constant="128" id="awL-gH-Rt4"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorPicker" translatesAutoresizingMaskIntoConstraints="NO" id="bz1-WO-SKx">
+                                <rect key="frame" x="16" y="277" width="343" height="43"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7.5" minValue="0.5" maxValue="13.5" translatesAutoresizingMaskIntoConstraints="NO" id="vgz-fI-oHM">
+                                <rect key="frame" x="14" y="356" width="347" height="31"/>
+                                <connections>
+                                    <action selector="sliderChangedWithSender:" destination="Mwg-Mc-cCM" eventType="valueChanged" id="eIo-6c-LvY"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXf-gG-fiU">
+                                <rect key="frame" x="41" y="58" width="293" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rW-o1-pxO">
+                                <rect key="frame" x="141" y="414" width="93" height="36"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Choose"/>
+                                <connections>
+                                    <action selector="chooseButton:" destination="Mwg-Mc-cCM" eventType="touchUpInside" id="U5q-Ds-7zE"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PXf-gG-fiU" firstAttribute="top" secondItem="LDb-R9-qVy" secondAttribute="bottom" constant="38" id="1R5-z9-9Yy"/>
+                            <constraint firstItem="bz1-WO-SKx" firstAttribute="leading" secondItem="NMX-uU-1bc" secondAttribute="leadingMargin" id="3Rz-X2-cpJ"/>
+                            <constraint firstItem="bz1-WO-SKx" firstAttribute="trailing" secondItem="NMX-uU-1bc" secondAttribute="trailingMargin" id="4h2-cR-CwP"/>
+                            <constraint firstItem="KRF-ge-MD3" firstAttribute="top" secondItem="2rW-o1-pxO" secondAttribute="bottom" constant="168" id="CdN-5b-Lju"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PXf-gG-fiU" secondAttribute="trailing" constant="25" id="D65-PT-mNH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2rW-o1-pxO" secondAttribute="trailing" constant="125" id="Egm-oa-quz"/>
+                            <constraint firstItem="2rW-o1-pxO" firstAttribute="top" secondItem="vgz-fI-oHM" secondAttribute="bottom" constant="28" id="LeO-bj-FjE"/>
+                            <constraint firstItem="bz1-WO-SKx" firstAttribute="top" secondItem="dmG-EG-GFc" secondAttribute="bottom" constant="32" id="M5X-vA-9hg"/>
+                            <constraint firstItem="vgz-fI-oHM" firstAttribute="top" secondItem="bz1-WO-SKx" secondAttribute="bottom" constant="36" id="NVm-Xy-Im0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dmG-EG-GFc" secondAttribute="trailing" constant="50" id="Pty-Ot-2dK"/>
+                            <constraint firstItem="vgz-fI-oHM" firstAttribute="leading" secondItem="NMX-uU-1bc" secondAttribute="leadingMargin" id="hxc-qf-fDN"/>
+                            <constraint firstItem="vgz-fI-oHM" firstAttribute="trailing" secondItem="NMX-uU-1bc" secondAttribute="trailingMargin" id="iLo-zA-1LG"/>
+                            <constraint firstItem="2rW-o1-pxO" firstAttribute="leading" secondItem="NMX-uU-1bc" secondAttribute="leadingMargin" constant="125" id="ieE-Fb-pxX"/>
+                            <constraint firstItem="dmG-EG-GFc" firstAttribute="top" secondItem="PXf-gG-fiU" secondAttribute="bottom" constant="26" id="pNL-Tg-cwn"/>
+                            <constraint firstItem="PXf-gG-fiU" firstAttribute="leading" secondItem="NMX-uU-1bc" secondAttribute="leadingMargin" constant="25" id="q6p-nb-eSL"/>
+                            <constraint firstItem="dmG-EG-GFc" firstAttribute="leading" secondItem="NMX-uU-1bc" secondAttribute="leadingMargin" constant="50" id="qhW-xk-Xmt"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="settingstab" selectedImage="settingstab" id="eEV-EE-N0Y">
-                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="selectedColorView" destination="dmG-EG-GFc" id="a0B-u8-7vs"/>
+                        <outlet property="slider" destination="vgz-fI-oHM" id="3Q6-Wf-WO8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7a-kZ-UTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="842"/>
+            <point key="canvasLocation" x="264.80000000000001" y="841.52923538230891"/>
         </scene>
     </scenes>
     <resources>
+        <image name="colorPicker" width="602" height="43"/>
         <image name="settingstab" width="30" height="30"/>
     </resources>
 </document>

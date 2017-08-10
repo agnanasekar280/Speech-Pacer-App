@@ -60,12 +60,10 @@ class ChooseTimerViewController: UITableViewController {
             [NSForegroundColorAttributeName: UIColor.black,
              NSFontAttributeName: UIFont(name: "Avenir", size: 21)!]
         
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,7 +74,6 @@ class ChooseTimerViewController: UITableViewController {
                 let timer = timers[indexPath.row]
                 
                 realTimerViewController.speechTime = Int(timer.minutes)
-                print(timer.minutes)
                 realTimerViewController.notificationOneTime = Int(timer.notificationOneMinutes)
                 realTimerViewController.notificationTwoTime = Int(timer.notificationTwoMinutes)
                 realTimerViewController.notificationLabel.text = timer.notificationTitle
@@ -86,17 +83,5 @@ class ChooseTimerViewController: UITableViewController {
             
         }
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

@@ -115,7 +115,6 @@ class RealTimerViewController: UIViewController {
         
         if seconds < 1 {
             timer.invalidate()
-            //Send alert to indicate "time's up!"
         } else {
             seconds -= 1
             timerLabel.text = timeString(time: TimeInterval(seconds))
@@ -125,7 +124,6 @@ class RealTimerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "displayRealTimer" {
-                print("Table view cell tapped")
             }
         }
     }
@@ -135,7 +133,6 @@ class RealTimerViewController: UIViewController {
         super.viewDidLoad()
         seconds =  60 * speechTime
         pauseButton.isEnabled = false
-        print(speechTime)
         timerLabel.text = timeString(time: TimeInterval(seconds))
         notificationView.layer.cornerRadius = 5
         speechTitleLabel.text = secondNotification
@@ -148,7 +145,6 @@ class RealTimerViewController: UIViewController {
         self.view.addSubview(notificationView)
         notificationView.center = self.view.center
         
-       // notificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         notificationView.alpha = 0
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -164,7 +160,6 @@ class RealTimerViewController: UIViewController {
         self.view.addSubview(secondNotificationView)
         secondNotificationView.center = self.view.center
         
-        //secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         secondNotificationView.alpha = 0
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -179,8 +174,6 @@ class RealTimerViewController: UIViewController {
     func animateInFinal() {
         self.view.addSubview(finalNotificationView)
         finalNotificationView.center = self.view.center
-        
-        //secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         finalNotificationView.alpha = 0
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate)) 
@@ -194,7 +187,6 @@ class RealTimerViewController: UIViewController {
     
     func animateOutAgain() {
         UIView.animate(withDuration: 0.3, delay: 4, options: [], animations: {
-            //self.secondNotificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.secondNotificationView.alpha = 0
         }) { (success: Bool) in
             self.secondNotificationView.removeFromSuperview()
@@ -205,7 +197,6 @@ class RealTimerViewController: UIViewController {
     
     func animateOut() {
         UIView.animate(withDuration: 0.3, delay: 4, options: [], animations: {
-         //   self.notificationView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.notificationView.alpha = 0
         }) { (success: Bool) in
             self.notificationView.removeFromSuperview()
@@ -215,17 +206,7 @@ class RealTimerViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }

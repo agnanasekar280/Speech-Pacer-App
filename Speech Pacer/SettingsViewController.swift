@@ -32,13 +32,10 @@ class SettingsViewController: UIViewController {
     
     @IBAction func chooseButton(_ sender: UIButton) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil, userInfo: ["color": selectedColorView.backgroundColor!])
-        // create the alert
         let alert = UIAlertController(title: "Your color has been chosen!", message: "", preferredStyle: UIAlertControllerStyle.alert)
         
-        // add an action (button)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         
-        // show the alert
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -47,12 +44,10 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     

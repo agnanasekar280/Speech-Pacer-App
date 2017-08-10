@@ -79,9 +79,7 @@ class SetNewTimerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "cancel" {
-                print("Cancel button tapped")
             } else if identifier == "save" {
-                print("Save button tapped")
                 
                 let timer = self.timer ?? CoreDataHelper.newTimer()
                 timer.title = titleTextField.text ?? ""
@@ -98,7 +96,6 @@ class SetNewTimerViewController: UIViewController {
                 let listTimersTableViewController = segue.destination as! ChooseTimerViewController
                 listTimersTableViewController.timers.append(timer)
                 listTimersTableViewController.minutes = minutes
-                print(minutes)
                 CoreDataHelper.saveTimer()
             }
         }

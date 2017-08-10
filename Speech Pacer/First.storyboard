@@ -56,7 +56,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcd-p9-ZJ2">
                                         <rect key="frame" x="0.0" y="0.0" width="119" height="67"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
-                                        <state key="normal" title="Timers"/>
+                                        <state key="normal" title="Timers">
+                                            <color key="titleColor" red="0.31764705879999999" green="0.57647058819999997" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="setTimerButtonTapped:" destination="Rvc-Yo-CTe" eventType="touchUpInside" id="qGf-a0-GZQ"/>
                                         </connections>
@@ -64,7 +66,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pc-O2-5om">
                                         <rect key="frame" x="0.0" y="167" width="145" height="67"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
-                                        <state key="normal" title="Settings"/>
+                                        <state key="normal" title="Settings">
+                                            <color key="titleColor" red="0.31764705879999999" green="0.57647058819999997" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="settingsButtonTapped:" destination="Rvc-Yo-CTe" eventType="touchUpInside" id="giX-FJ-HpI"/>
                                         </connections>

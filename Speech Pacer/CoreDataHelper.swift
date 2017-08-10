@@ -23,7 +23,6 @@ class CoreDataHelper {
         do {
             try managedContext.save()
         } catch let error as NSError {
-            print("Could not save \(error)")
         }
     }
     
@@ -38,7 +37,6 @@ class CoreDataHelper {
             let results = try managedContext.fetch(fetchRequest)
             return results
         } catch let error as NSError {
-            print("Could not fetch \(error)")
         }
         return []
     }

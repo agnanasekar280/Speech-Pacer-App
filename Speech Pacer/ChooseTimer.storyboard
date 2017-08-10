@@ -58,6 +58,11 @@
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="My Timers" id="Dbg-Oq-hUy">
+                        <barButtonItem key="leftBarButtonItem" image="info_black (1)" id="jAK-mA-s3u">
+                            <connections>
+                                <segue destination="8GQ-YH-5F9" kind="show" id="Y2I-ga-eg0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HxQ-5r-2a8">
                             <connections>
                                 <segue destination="HfH-0e-TS0" kind="show" identifier="addTimer" id="VOL-1X-Orf"/>
@@ -69,6 +74,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPG-2m-L1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="568.79999999999995" y="803.74812593703155"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="AHn-Wp-2BC">
+            <objects>
+                <viewController id="8GQ-YH-5F9" customClass="AboutViewController" customModule="Speech_Pacer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BuS-q5-Kiz"/>
+                        <viewControllerLayoutGuide type="bottom" id="z5A-fS-y8w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lvk-nU-Pdr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myface" translatesAutoresizingMaskIntoConstraints="NO" id="vKt-ca-mc1">
+                                <rect key="frame" x="137" y="87" width="100" height="100"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoN-cw-FAR">
+                                <rect key="frame" x="8" y="189" width="359" height="434"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Aditi Gnanasekar created Speech Pacer during the summer of 2017. As an avid competitor and officer of her high school's Speech and Debate Team, she wanted to create an app that not only keeps track of speakers' times but also keeps speakers on track to deliver organized, fluent, and successful speeches. Speech Pacer does exactly that, through the use of a reliable timer and customizable in-app notes and notifications. Check out some of Aditi's other apps that she created with TheGirlCode, including Chroma (a doodling app) and BobaBeacon (an app where you can share and view photos, reviews, and drink recommendations with boba lovers). All are available on the iOS App store today!
+</mutableString>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DoN-cw-FAR" secondAttribute="trailing" constant="8" id="1nn-sw-C0E"/>
+                            <constraint firstItem="vKt-ca-mc1" firstAttribute="centerX" secondItem="lvk-nU-Pdr" secondAttribute="centerX" id="Axr-3J-G9U"/>
+                            <constraint firstItem="vKt-ca-mc1" firstAttribute="leading" secondItem="lvk-nU-Pdr" secondAttribute="leadingMargin" constant="121" id="MTC-G6-ky1"/>
+                            <constraint firstItem="DoN-cw-FAR" firstAttribute="top" secondItem="BuS-q5-Kiz" secondAttribute="bottom" constant="125" id="eMb-Qn-RfK"/>
+                            <constraint firstItem="DoN-cw-FAR" firstAttribute="leading" secondItem="lvk-nU-Pdr" secondAttribute="leading" constant="8" id="jf0-KR-3Th"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vKt-ca-mc1" secondAttribute="trailing" constant="122" id="kV3-p1-0O8"/>
+                            <constraint firstAttribute="bottom" secondItem="DoN-cw-FAR" secondAttribute="bottom" constant="44" id="sfc-Fz-WPm"/>
+                            <constraint firstItem="vKt-ca-mc1" firstAttribute="top" secondItem="BuS-q5-Kiz" secondAttribute="bottom" constant="23" id="w6S-6C-zBM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="meImageView" destination="vKt-ca-mc1" id="adV-kJ-zVY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNn-Lh-nYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="568.79999999999995" y="1509.8950524737631"/>
         </scene>
         <!--Real Timer View Controller-->
         <scene sceneID="qjw-fs-D5o">
@@ -129,7 +178,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to Settings to change the color of your timer's notifications." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5w-gp-xAO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to Settings to change the color of this timer's notifications." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5w-gp-xAO">
                                 <rect key="frame" x="20" y="563.5" width="335" height="46.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -195,12 +244,12 @@
                                 <constraint firstAttribute="width" constant="308" id="1he-WI-T4n"/>
                                 <constraint firstAttribute="height" constant="129" id="ihS-5J-TaK"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="42"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.396078431372549" green="0.76078431372549016" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="HEz-QT-Sqz" firstAttribute="centerX" secondItem="Jcc-8l-mUE" secondAttribute="centerX" id="0Jx-2j-U4x"/>
                         <constraint firstItem="HEz-QT-Sqz" firstAttribute="centerY" secondItem="Jcc-8l-mUE" secondAttribute="centerY" id="UUh-99-XcD"/>
@@ -211,20 +260,20 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oZ-lM-QVu">
-                            <rect key="frame" x="107.5" y="94.5" width="125" height="33"/>
-                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                            <rect key="frame" x="61.5" y="82.5" width="218.5" height="57.5"/>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="42"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.396078431372549" green="0.76078431372549016" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="4oZ-lM-QVu" firstAttribute="centerX" secondItem="Eef-kG-TFk" secondAttribute="centerX" id="g9f-8X-88S"/>
                         <constraint firstItem="4oZ-lM-QVu" firstAttribute="centerY" secondItem="Eef-kG-TFk" secondAttribute="centerY" id="r3u-aS-DfO"/>
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1429.5999999999999" y="761.46926536731644"/>
+            <point key="canvasLocation" x="1462" y="851"/>
         </scene>
         <!--Set a new timer-->
         <scene sceneID="txv-v7-WqT">
@@ -356,5 +405,7 @@
     </scenes>
     <resources>
         <image name="clocktab" width="32" height="34"/>
+        <image name="info_black (1)" width="30" height="30"/>
+        <image name="myface" width="100" height="100"/>
     </resources>
 </document>
